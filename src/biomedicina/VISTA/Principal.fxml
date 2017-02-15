@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="919.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biomedicina.CONTROLADOR.PrincipalController">
+  <children>
+    <TabPane layoutX="14.0" layoutY="14.0" prefHeight="579.0" prefWidth="891.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="IMAGEN">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <ImageView fx:id="Foto" fitHeight="307.0" fitWidth="409.3333333333333" layoutX="14.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                <Slider id="Deslizador" fx:id="Deslizador_R" layoutX="434.0" layoutY="14.0" max="255.0" onDragDetected="#ACTUALIZAR_R" orientation="VERTICAL" prefHeight="313.0" showTickLabels="true" showTickMarks="true" snapToTicks="false" value="125.0" />
+                <Slider fx:id="Deslizador_G" blockIncrement="1.0" layoutX="478.0" layoutY="14.0" max="255.0" onDragDetected="#ACTUALIZAR_G" orientation="VERTICAL" prefHeight="313.0" showTickLabels="true" showTickMarks="true" value="125.0" />
+                <Slider fx:id="Deslizador_B" blockIncrement="1.0" layoutX="522.0" layoutY="14.0" max="255.0" onDragDetected="#ACTUALIZAR_B" orientation="VERTICAL" prefHeight="313.0" showTickLabels="true" showTickMarks="true" value="125.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="VIDEO">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="572.0">
+              <children>
+                <Pane fx:id="Pantalla" layoutX="159.0" layoutY="27.0" prefHeight="428.0" prefWidth="623.0" style="-fx-border-color: black;" />
+                <Button layoutX="470.0" layoutY="483.0" mnemonicParsing="false" onAction="#REPRODUCIR" text="ENLAZAR" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="OPEN_CV">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <ImageView id="im" fx:id="Imagen" fitHeight="480.0" fitWidth="640.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="false" style="" />
+                <Button fx:id="Camara" layoutX="697.0" layoutY="25.0" mnemonicParsing="false" onAction="#CAMARA_WEB" text="CAMARA" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="RESULTADO EXPERIMENTAL">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <ImageView fx:id="Experimental" fitHeight="480.0" fitWidth="640.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#SELECCIONAR_PATRON_COLOR" pickOnBounds="true" preserveRatio="false" />
+                <TextField fx:id="Comentario" layoutX="106.0" layoutY="515.0" prefWidth="90.0" />
+                <Slider fx:id="Sensibilidad" blockIncrement="1.0" layoutX="801.0" layoutY="14.0" majorTickUnit="10.0" minorTickCount="5" onDragDetected="#CAMBIO_DE_VALOR" orientation="VERTICAL" prefHeight="523.0" prefWidth="76.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+                <TextField fx:id="Extras" layoutX="234.0" layoutY="515.0" prefWidth="420.0" />
+                <Label layoutX="23.0" layoutY="518.0" text="PROCESADAS:" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+            <Tab text="ANALISIS DE PATRONES">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="Patrones" fitHeight="500.0" fitWidth="300.0" layoutX="14.0" layoutY="24.0" onMouseClicked="#CARGAR_IMAGEN" pickOnBounds="true">
+                           <image>
+                              <Image url="@../MODELO/IMAGENES/analisis.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+  <stylesheets>
+    <URL value="@../MODELO/CSS/principal.css" />
+  </stylesheets>
+</AnchorPane>
