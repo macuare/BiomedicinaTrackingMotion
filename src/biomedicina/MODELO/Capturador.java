@@ -144,7 +144,10 @@ public class Capturador {
            public void run() {
                //ENLANZANDO LA FUENTE DE VIDEO
              VideoCapture camera = new VideoCapture(); 
-            camera.open(0); // camara local
+             //Camara Locar del equipo
+             camera.open(0); // camara local
+             
+             //Direccion remota via local o web
             // camera.open("http://192.168.30.101:8080/video?dummy=param.mjpg"); // Modo camaras Ip
             
              if(!camera.isOpened()){
